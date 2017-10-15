@@ -2,12 +2,49 @@
 <html lang=en>
     <head>
         <meta charset=utf-8>
-        <link href="./style.css" rel="stylesheet" type="text/css">
+        <link href="./main.css" rel="stylesheet" type="text/css">
         <title>Help me choose!</title>
     </head>
     <body>
       <h1>Historiepodden..</h1>
+      <div class="inputSection">
+          <div class="inputs">
+            <input placeholder="Avsnitt"></input>
+          </div>
+          <button class="go">Hitta!</button>
+        </div>
+        <h1>eller...</h1>
+         <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Välj avsnitt</button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div> 
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script>
 
-    </body>
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+
+        </body>
 </html>
+
