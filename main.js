@@ -6,13 +6,17 @@ var episodes = ["1. Krimavsnittet","2. Sedlighetsavsnittet", "3. Ubåt i sikte!"
 "22. Djingis Khan: Erövrare i västerled","23. Dinosaurierna -1800-talets vetenskapliga strid","24. Fotbollskriget","25. Nordpolens erövrare?","26. Tyst vår - Rachel Carson och miljörörelsen",
 "27. Adrianopel 378 - världsordning i gungning","28. Sverige och romerna","29. Antik teknik","30. Himmel eller helvete?","31: Mordkonspirationen mot Abraham Lincoln",
 "32. Historia på vita duken","33. Nyköpings gästabud","34. Lucia","35. Francis Bacon - liv, intriger och vetenskap","36. Julbordet","37. Mesopotamien",
-"38. Det Enigmatiska avsnittet",
-"70. Imperiebyggaren Coco Chanel", "71. Biografiavsnittet", "72. Geiserik och hans Vandaler",
+"38. Det Enigmatiska avsnittet","39. Bletchley Park","40. La Jacquerie","41. Hotet mot ungdomen","42. Tre generationer Tessin","43. the Curious Case of Ada Lovelace","44. Så erövrades etern",
+"45. Mali","46. Hedy, George och frekvenshoppningen","47. Hur vi hungrar (norrländska hungersnöden 1867)","48. Marius och Sulla del 1","49. Marius och Sulla del 2",
+"50. Robin Hood","51. Svenska stormaktskolonier","52. Den gula tapeten","53. Det Sassanidiska Persiens födelse",
+"54. Öar","55. Victory in Europe","56. Klanen Kennedy del 1","57. Joe Hill","58. 47 ronin","59. Akhenaton och Nefertiti","60. Klanen Kennedy del 2",
+"61. Klanen Kennedy del 3","62. Sturarnas slut","63. Mary Wollstonecraft","64. Piraternas gyllene era","65. Museiavsnittet","66. Tyska orden och korståget mot pruserna",
+"67. Påskkravallerna 1943","68. Konspirationen kring maskeradbalen","69. I spanskans svallvågor","70. Imperiebyggaren Coco Chanel", "71. Biografiavsnittet", "72. Geiserik och hans Vandaler",
 "73. Bad Romance", "74. Röda Molnets Krig","75. Bland Medeltida Djur & Odjur","76. Ernest Thiel - del 1: Riskkapitalisten","77. Du Sköna Nya Värld",
 "78. Ernest Thiel - del 2: Kulturmecenaten","79. Jeanne d'Arcs Rättegång","80. Det Första Puniska Kriget","81. Den Vackra Dalkullan","82. von Humboldt i Sydamerika",
 "83. Ungernrevolten 1956","84. Den Driftige Darius","85. Tesla","86. Folktro & Vatten","87. Alkemiska Avsnittet","88. Så enade Qin Kina","89. Drottning Kristina Del 1",
 "90. Drottning Kristina del 2","91. Vegetariska Avsnittet","92. Bertil Ohlin - Ekonomi & Politik","93. Palmemordet","94. Häxjakten i Salem 1692","95. Nedslag i Hygienhistorien",
-"96. Futurismens Italien","97. Lewis & Clark - Expeditionen Västerut","98. Minoernas Kreta: Myt & Verklighet","98. Minoernas Kreta: Myt & Verklighet",
+"96. Futurismens Italien","97. Lewis & Clark - Expeditionen Västerut","98. Minoernas Kreta: Myt & Verklighet",
 "99. Filip II: Hellas Hegemon", "100. Jubileumsavsnittet","101. BANG i Berlin","102. Allas Krig Mot Alla","103. Den Biologiska Byteshandeln","104. Coup d'état",
 "105. Gogols Ryssland","106. Olavs & Sigrids Vikingaintriger","107. Stor-Stinas Liv & Resor","108. Revolutionskejsarnas År","109. Dreyfusaffären","110. Farlig Midsommar",
 "111. Bränn Borgarna!","112. Engelbrektsupproret","113. Rosalind Franklin","114. Historiska Förfalskningar","115. Bilden av Vasa","116. Olympiska Avsnittet",
@@ -25,7 +29,7 @@ var episodes = ["1. Krimavsnittet","2. Sedlighetsavsnittet", "3. Ubåt i sikte!"
 "152. Kung Arthur","153. Svenska Älvar","154. Koreakriget","155. Trastfältet 1389","156. Agrippina den yngre","157. Hunter S. Thompson","158. Nationaldagar",
 "159. Stasi","160. Göbekli Tepe","161. Fossila Hemligheter","162. Dunkerque","163. Aten och Sparta 1/3","164. Slaget vid Marathon 2/3","165. Perserkrigens Klimax 3/3",
 "166. Berättelser från Rom","167. De Sju Systrarna","168. CJL Almqvists Fejder","169. Relationer På 1600-talet","170 Södermalms Hungerkravaller","171. Duellen Om Nilen",
-"172. Miljöbrott & Straff","173. Luthers Reformation","174. Mellan Getå & Akkavare","175. Nikaupproret år 532"]
+"172. Miljöbrott & Straff","173. Luthers Reformation","174. Mellan Getå & Akkavare","175. Nikaupproret år 532", "176. Monster"]
 
 function addOption(selectbox,text,value )
 {
@@ -80,5 +84,21 @@ function episode_nr(){
     
   document.getElementById("avsnittsnamn").innerHTML = episodes[data.episode - 1];
 }
+
+
+$(document).ready(function(){
+    $('.episode_text').keypress(function(e){
+      if(e.keyCode==13)
+      $('.text_button').click();
+    });
+});
+$(document).ready(function(){
+    $('#select').keypress(function(e){
+      if(e.keyCode==13)
+      $('.drop_button').click();
+    });
+});
+
+
 
 
